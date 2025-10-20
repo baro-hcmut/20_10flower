@@ -1010,7 +1010,7 @@
             })();
 
             let ctx, cw, ch, fireworks = [], particles = [], hue = 120,
-                limiterTotal = 5, limiterTick = 0, timerTotal = 30, timerTick = 0;
+                limiterTotal = 4, limiterTick = 0, timerTotal = 8, timerTick = 0; 
 
             function startFireworks() {
                 const canvas = document.getElementById('canvas');
@@ -1145,7 +1145,7 @@
             }
 
             function createParticles(x, y) {
-                var particleCount = 30;
+                var particleCount = 80; 
                 while (particleCount--) {
                     particles.push(new Particle(x, y));
                 }
@@ -1205,7 +1205,7 @@
                 }
 
                 setInterval(() => {
-                    const starCount = Math.floor(Math.random() * 3) + 1;
+                    const starCount = Math.floor(Math.random() * 4) + 2; 
                     for (let i = 0; i < starCount; i++) {
                         const shootingStar = document.createElement('div');
                         shootingStar.className = 'shooting-star';
@@ -1274,6 +1274,4 @@
     </script>
 </body>
 </html>
-
-
 
