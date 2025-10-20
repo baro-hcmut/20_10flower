@@ -1010,10 +1010,17 @@
                 startFireworks();
                 await delay(10000);
 
-                stopFireworks();
+                // --- [FIXED] Sửa lỗi chuyển cảnh bị khựng ---
+                // Bắt đầu làm mờ canvas TRƯỚC KHI dừng animation
+                // để pháo hoa mờ dần một cách tự nhiên.
                 fireworksCanvas.style.transition = 'opacity 1.5s ease-out, visibility 1.5s';
                 fireworksCanvas.classList.remove('visible');
+                
+                // Đợi cho hiệu ứng mờ kết thúc
                 await delay(1500);
+                
+                // Bây giờ mới dừng hẳn vòng lặp animation để dọn dẹp
+                stopFireworks();
 
 
                 mainContent.classList.add('visible');
